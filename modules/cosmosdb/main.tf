@@ -14,7 +14,7 @@ resource "azurerm_cosmosdb_account" "cosmosdb" {
   kind                = var.kind
   tags                = var.resource_tags
 
-  enable_automatic_failover = var.automatic_failover
+  enable_automatic_failover = true
 
   dynamic "capabilities" {
     for_each = var.graph_databases == null ? [] : [1]
